@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio | Aryan Dutta</title>
+    <style>
+        /* General Styling */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #121212;
+            color: #fff;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+
+        /* Header with Background Image */
+        header {
+            padding: 50px 20px;
+            background: url('background.jpg') center/cover no-repeat;
+            position: relative;
+            min-height: 300px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Dark Overlay for Visibility */
+        header::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.4);
+            z-index: 1;
+        }
+
+        /* Profile & Name - Centered */
+        .header-content {
+            position: relative;
+            z-index: 2;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* Profile Picture */
+        .profile-pic {
+            width: 150px;
+            height: 150px;
+            border-radius: 15px;
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+
+        .profile-pic:hover {
+            transform: scale(1.1);
+            box-shadow: 0px 0px 12px rgba(3, 218, 198, 0.6);
+        }
+
+        /* Name Styling */
+        .header-content h1 {
+            font-size: 22px;
+            margin: 10px 0 5px;
+        }
+
+        .header-content p {
+            font-size: 14px;
+            color: #ccc;
+        }
+
+        /* Navigation Bar for Headings */
+        .nav {
+            display: flex;
+            justify-content: center;
+            background: #1e1e1e;
+            padding: 10px 0;
+            flex-wrap: wrap;
+        }
+
+        .nav h2 {
+            margin: 0 10px;
+            padding: 8px 15px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: color 0.3s, background 0.3s, transform 0.2s;
+            border-radius: 5px;
+        }
+
+        /* Heading Hover Effect */
+        .nav h2:hover {
+            background: rgba(3, 218, 198, 0.2);
+            color: #03DAC6;
+            transform: scale(1.05);
+        }
+
+        /* Content Sections */
+        .content-container {
+            max-width: 800px;
+            margin: auto;
+            padding: 20px;
+        }
+
+        .content {
+            display: none;
+            background: #222;
+            padding: 20px;
+            margin-top: 10px;
+            border-radius: 10px;
+            text-align: left;
+            transition: max-height 0.5s ease-in-out;
+        }
+
+        .active {
+            display: block;
+        }
+
+        /* Project Card */
+        .project {
+            background: #333;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 10px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .project:hover {
+            transform: scale(1.02);
+            box-shadow: 0px 4px 15px rgba(3, 218, 198, 0.4);
+        }
+
+        /* Socials Section */
+        #socials .content {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 15px;
+            flex-wrap: wrap;
+            margin-top: 10px;
+        }
+
+        /* Rectangular Social Links */
+        #socials .content a {
+            display: inline-block;
+            padding: 12px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            color: #fff;
+            background: rgba(3, 218, 198, 0.2);
+            font-size: 16px;
+            font-weight: bold;
+            border: 2px solid #03DAC6;
+            transition: background 0.3s, color 0.3s, transform 0.2s;
+            text-align: center;
+            min-width: 120px;
+        }
+
+        /* Hover Effect */
+        #socials .content a:hover {
+            background: #03DAC6;
+            color: #000;
+            transform: scale(1.1);
+        }
+
+        /* Footer Styling */
+        footer {
+            margin: 20px 0;
+            font-size: 14px;
+            color: #ccc;
+        }
+
+    </style>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+    const headings = document.querySelectorAll(".nav h2");
+    const sections = {
+        "about-heading": document.getElementById("about"),
+        "skills-heading": document.getElementById("skills"),
+        "projects-heading": document.getElementById("projects"),
+        "socials-heading": document.getElementById("socials"),
+        "contact-heading": document.getElementById("contact"),
+    };
+
+    headings.forEach((heading) => {
+        heading.addEventListener("click", function() {
+            const targetId = heading.id;
+            
+            Object.keys(sections).forEach((key) => {
+                if (key === targetId) {
+                    sections[key].classList.toggle("active");
+                } else {
+                    sections[key].classList.remove("active");
+                }
+            });
+        });
+    });
+});
+
+    </script>
+</head>
+<body>
+
+    <!-- Header with Profile -->
+    <header>
+        <div class="header-content">
+            <img src="profile.jpg" alt="Profile Picture" class="profile-pic"> 
+            <h1>Aryan Dutta</h1>
+            <p>Cybersecurity Enthusiast | Developer | Photographer</p>
+        </div>
+    </header>
+
+    <!-- Navigation Bar (Headings in One Line) -->
+    <div class="nav">
+        <h2 id="about-heading">About Me</h2>
+        <h2 id="skills-heading">Skills</h2>
+        <h2 id="projects-heading">Projects</h2>
+        <h2 id="socials-heading">Socials</h2>
+        <h2 id="contact-heading">Contact</h2>
+    </div>
+
+    <!-- Content Sections -->
+    <div class="content-container">
+
+        <div id="about" class="content">
+            <p>I'm passionate about cybersecurity, coding, and creating cinematic videos. I love building secure and efficient applications.</p>
+        </div>
+
+        <div id="skills" class="content">
+            <ul>
+                <li>Cybersecurity</li>
+                <li>HTML, CSS, JavaScript</li>
+                <li>Python, Kotlin</li>
+                <li>DaVinci Resolve, CapCut</li>
+            </ul>
+        </div>
+
+        <div id="projects" class="content">
+            <div class="project" onclick="toggleProjectDetails(this)">
+                <h3>Wireless Security App</h3>
+                <p>Building an Android app for wireless security analysis.</p>
+                <div class="project-details">
+                    <p>This app is designed to analyze wireless security vulnerabilities. It is developed using Kotlin and Android Studio, incorporating cybersecurity measures to assess network security.</p>
+                    <p><strong>Technologies Used:</strong> Kotlin, Android Studio, Cybersecurity Tools</p>
+                </div>
+            </div>
+        </div>
+        
+        <script>
+            function toggleProjectDetails(projectElement) {
+                const details = projectElement.querySelector('.project-details');
+                if (details.style.display === "block") {
+                    details.style.display = "none";
+                } else {
+                    details.style.display = "block";
+                }
+            }
+        </script>
+        
+        <style>
+            .project-details {
+                display: none;
+                background: #444;
+                padding: 10px;
+                margin-top: 10px;
+                border-radius: 5px;
+            }
+        </style>
+        
+
+        <div id="socials" class="content">
+            <div class="content">
+                <a href="https://github.com/aryan-d174" target="_blank">GitHub</a>
+                <a href="https://www.linkedin.com/in/aryan-dutta-476141330/" target="_blank">LinkedIn</a>
+                <a href="https://www.instagram.com/aryan_d._/" target="_blank">Instagram</a>
+            </div>
+        </div>
+
+        <div id="contact" class="content">
+                <p>Email: aryandutta174@gmail.com</p> 
+        </div>
+
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Aryan Dutta. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>
