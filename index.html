@@ -131,9 +131,7 @@
             transform: scale(1.02);
             box-shadow: 0px 4px 15px rgba(3, 218, 198, 0.4);
         }
-        #socials {
-    display: block 
-}
+
         #socials .content {
     display: flex;
     flex-direction: column;
@@ -151,7 +149,6 @@
 }
 
 .social-icon {
-    display: block;
     width: 50px;  /* Ideal size */
     height: 50px;
     border-radius: 50%;
@@ -172,26 +169,32 @@
 
     </style>
     <script>
-document.addEventListener("DOMContentLoaded", function() {
+        document.addEventListener("DOMContentLoaded", function() {
     const headings = document.querySelectorAll(".nav h2");
-    const sections = document.querySelectorAll(".content");
+    const sections = {
+        "about-heading": document.getElementById("about"),
+        "skills-heading": document.getElementById("skills"),
+        "projects-heading": document.getElementById("projects"),
+        "socials-heading": document.getElementById("socials"),
+        "contact-heading": document.getElementById("contact"),
+    };
 
     headings.forEach((heading) => {
         heading.addEventListener("click", function() {
-            const targetId = heading.id.replace("-heading", ""); // Get the correct section ID
-
-            sections.forEach((section) => {
-                if (section.id === targetId) {
-                    section.classList.add("active"); // Ensure section is displayed
+            const targetId = heading.id;
+            
+            Object.keys(sections).forEach((key) => {
+                if (key === targetId) {
+                    sections[key].classList.toggle("active");
                 } else {
-                    section.classList.remove("active");
+                    sections[key].classList.remove("active");
                 }
             });
         });
     });
 });
-</script>
 
+    </script>
 </head>
 <body>
 
@@ -262,21 +265,19 @@ document.addEventListener("DOMContentLoaded", function() {
         </style>
         
 
-       <div id="socials" class="content">
-    <div class="social-icons-container">
-        <a href="https://github.com/aryan-d174" target="_blank">
-            <img src="https://aryan-d.netlify.app/github-icon.png" alt="GitHub" class="social-icon">
-        </a>
-        <a href="https://www.linkedin.com/in/aryan-dutta-476141330/" target="_blank">
-            <img src="https://aryan-d.netlify.app/linkedin-icon.png" alt="LinkedIn" class="social-icon">
-        </a>
-        <a href="https://www.instagram.com/aryan_d._/" target="_blank">
-            <img src="https://aryan-d.netlify.app/instagram-icon.png" alt="Instagram" class="social-icon">
-        </a>
-    </div>
-</div>
-
-
+        <div id="socials" class="content">
+            <div class="social-icons-container">
+                <a href="https://github.com/aryan-d174" target="_blank">
+                    <img src="github-icon.png" alt="GitHub" class="social-icon">
+                </a>
+                <a href="https://www.linkedin.com/in/aryan-dutta-476141330/" target="_blank">
+                    <img src="linkedin-icon.png" alt="LinkedIn" class="social-icon">
+                </a>
+                <a href="https://www.instagram.com/aryan_d._/" target="_blank">
+                    <img src="instagram-icon.png" alt="Instagram" class="social-icon">
+                </a>
+            </div>
+        </div>
         
 
         <div id="contact" class="content">
