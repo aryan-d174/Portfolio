@@ -172,32 +172,26 @@
 
     </style>
     <script>
-        document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function() {
     const headings = document.querySelectorAll(".nav h2");
-    const sections = {
-        "about-heading": document.getElementById("about"),
-        "skills-heading": document.getElementById("skills"),
-        "projects-heading": document.getElementById("projects"),
-        "socials-heading": document.getElementById("socials"),
-        "contact-heading": document.getElementById("contact"),
-    };
+    const sections = document.querySelectorAll(".content");
 
     headings.forEach((heading) => {
         heading.addEventListener("click", function() {
-            const targetId = heading.id;
-            
-            Object.keys(sections).forEach((key) => {
-                if (key === targetId) {
-                    sections[key].classList.toggle("active");
+            const targetId = heading.id.replace("-heading", ""); // Get the correct section ID
+
+            sections.forEach((section) => {
+                if (section.id === targetId) {
+                    section.classList.add("active"); // Ensure section is displayed
                 } else {
-                    sections[key].classList.remove("active");
+                    section.classList.remove("active");
                 }
             });
         });
     });
 });
+</script>
 
-    </script>
 </head>
 <body>
 
