@@ -133,60 +133,39 @@
         }
 
         #socials .content {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            margin-top: 10px;
-            text-align: center;
-        }
-
-        .social-icons-container {
-            display: flex;
-            justify-content: center; /* Center icons horizontally */
-            align-items: center; /* Align vertically */
-            gap: 20px; /* Space between icons */
-            flex-wrap: nowrap; /* Prevent wrapping */
-        }
-
-        .social-icon {
-            width: 50px;  /* Ideal size */
-            height: 50px;
-            border-radius: 50%;
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-
-        .social-icon:hover {
-            transform: scale(1.1);
-            box-shadow: 0px 0px 10px rgba(3, 218, 198, 0.6);
-        }
-    </style>
-    <style>
-        /* Ensure full-page height and align content */
-html, body {
-    height: 100%;
     display: flex;
     flex-direction: column;
-    margin: 0;
-    justify-content: space-between;
     align-items: center;
-}
-
-/* Make sure the main content takes up available space */
-.content-container {
-    flex: 1; /* Pushes the footer to the bottom */
-    width: 100%;
-    max-width: 800px; /* Keep it aligned with content */
-}
-
-/* Footer Styling - Always at Bottom & Center */
-footer {
+    margin-top: 10px;
     text-align: center;
-    padding: 10px;
-    background: #1e1e1e;
-    width: 100%;
-    max-width: 800px; /* Align with content width */
-    border-radius: 10px;
 }
+
+.social-icons-container {
+    display: flex;
+    justify-content: center; /* Center icons horizontally */
+    align-items: center; /* Align vertically */
+    gap: 20px; /* Space between icons */
+    flex-wrap: nowrap; /* Prevent wrapping */
+}
+
+.social-icon {
+    width: 50px;  /* Ideal size */
+    height: 50px;
+    border-radius: 50%;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.social-icon:hover {
+    transform: scale(1.1);
+    box-shadow: 0px 0px 10px rgba(3, 218, 198, 0.6);
+}
+
+        /* Footer Styling */
+        footer {
+            margin: 20px 0;
+            font-size: 14px;
+            color: #ccc;
+        }
 
     </style>
     <script>
